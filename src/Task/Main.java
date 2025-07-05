@@ -21,7 +21,6 @@ public class Main {
             Customer customer = new Customer("Ahmed", 1700, cart);
             System.out.println("customer balance: " + customer.getBalance());
             CheckoutService.Checkout(customer);
-            System.out.println("customer balance After Checkout: " + customer.getBalance());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -31,9 +30,7 @@ public class Main {
 
         try {
             Customer customer1 = new Customer("Ahmed", 1000, cart);
-            System.out.println("customer balance: " + customer1.getBalance());
             CheckoutService.Checkout(customer1);
-            System.out.println("customer balance After Checkout: " + customer1.getBalance());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -44,9 +41,7 @@ public class Main {
         try {
             cart.addToCart(new Item(tv, 4));
             Customer customer2= new Customer("Ahmed",1500, cart);
-            System.out.println("customer balance: " + customer2.getBalance());
             CheckoutService.Checkout(customer2);
-            System.out.println("customer balance After Checkout: " + customer2.getBalance());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -57,9 +52,7 @@ public class Main {
 
         try {
             Customer customer2= new Customer("Ahmed",1500, new Cart());
-            System.out.println("customer balance: " + customer2.getBalance());
             CheckoutService.Checkout(customer2);
-            System.out.println("customer balance After Checkout: " + customer2.getBalance());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -72,9 +65,7 @@ public class Main {
             Product cheese2 = new Cheese("Cheese", 100, 10, LocalDate.now().minusDays(5), 0.4);
             cart.addToCart(new Item(cheese2,1));
             Customer customer2= new Customer("Ahmed",1500, cart);
-            System.out.println("customer balance: " + customer2.getBalance());
             CheckoutService.Checkout(customer2);
-            System.out.println("customer balance After Checkout: " + customer2.getBalance());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -87,9 +78,7 @@ public class Main {
             Cart cart1= new Cart();
             cart1.addToCart(new Item(cheese2,1));
             Customer customer2= new Customer("Ahmed",1500, cart1);
-            System.out.println("customer balance: " + customer2.getBalance());
             CheckoutService.Checkout(customer2);
-            System.out.println("customer balance After Checkout: " + customer2.getBalance());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

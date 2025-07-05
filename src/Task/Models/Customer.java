@@ -5,7 +5,7 @@ public class Customer {
     private double balance;
     private Cart cart;
 
-    public Customer(String name,int balance, Cart cart) {
+    public Customer(String name, int balance, Cart cart) {
         this.name = name;
         this.balance = balance;
         this.cart = cart;
@@ -24,13 +24,21 @@ public class Customer {
     }
 
     public void setBalance(double balance) {
+        if (balance < 0) {
+            throw new IllegalArgumentException("Balance cannot be negative");
+        }
         this.balance = balance;
     }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void reduceBalance(double balance) {
+        this.balance -= balance;
     }
 }

@@ -24,6 +24,9 @@ public abstract class Product {
     }
 
     public void setPrice(int price) {
+        if (price < 0) {
+            throw new IllegalArgumentException("Price cannot be negative");
+        }
         this.price = price;
     }
 

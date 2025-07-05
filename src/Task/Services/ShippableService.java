@@ -13,14 +13,27 @@ public class ShippableService {
         this.quantity = quantity;
     }
 
+    public double calculate(double fees) {
+        double total = 0;
+        int idx = 0;
+        for (ShippableItems item : items) {
+            total += quantity.get(idx) * item.getWeight() * fees;
+            idx++;
+        }
+        return total;
+    }
 
-    public void build() {
+    public void printShippableItems() {
+        double totalWeight = 0;
         int idx = 0;
         System.out.println("** Shipment notice **");
         for (ShippableItems item : items) {
-            System.out.println(quantity.get(idx) + "x " + item.getName() + " " + item.getWeight()+"kg");
+            totalWeight += quantity.get(idx) * item.getWeight();
+            System.out.println(quantity.get(idx) + "x " + item.getName() + " " + item.getWeight() + "kg");
             idx++;
         }
+        System.out.println("Total package weight  " + totalWeight + "kg");
     }
+
 
 }
